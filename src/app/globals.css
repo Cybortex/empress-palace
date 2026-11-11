@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rose-pink: #A83263;
+  --color-rose-pink-dark: #8C2450;
+  --color-rose-pink-light: #BF4578;
+  --color-blush-pink: #E8A9BD;
+  --color-blush-pink-light: #FCEEF2;
+  --color-champagne-gold: #C6A15B;
+  --color-champagne-gold-light: #DFC48E;
+  --color-warm-cream: #FFF8F0;
+  --color-warm-cream-alt: #FBF0E4;
+  --color-deep-charcoal: #241C20;
+  --color-charcoal-muted: #4F4349;
+
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-editorial: var(--font-cormorant), "Cormorant Garamond", Garamond, Georgia, serif;
+}
+
+:root {
+  --background: #FFF8F0;
+  --foreground: #241C20;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom editorial scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C6A15B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A83263;
+}
+
+/* Luxury animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Selection color */
+::selection {
+  background-color: #E8A9BD;
+  color: #241C20;
+}
