@@ -13,7 +13,7 @@ export default function RelatedProducts({ currentProduct }: RelatedProductsProps
     (p) =>
       p.id !== currentProduct.id &&
       (currentProduct.relatedSlugs?.includes(p.slug) || p.category === currentProduct.category)
-  ).slice(0, 3);
+  ).slice(0, 4);
 
   if (related.length === 0) return null;
 
@@ -29,11 +29,11 @@ export default function RelatedProducts({ currentProduct }: RelatedProductsProps
           You May Also <span className="font-editorial italic font-semibold text-[#A83263]">Admire</span>
         </h3>
         <p className="text-xs sm:text-sm text-[#241C20]/70 font-light">
-          Complementary haute pieces styled by our private atelier director.
+          Complementary Nigerian fashion creations styled by our private atelier director.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
         {related.map((prod) => (
           <ProductCard key={prod.id} product={prod} />
         ))}

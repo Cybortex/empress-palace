@@ -47,6 +47,7 @@ export interface Product {
   colors: ProductColor[];
   inStock: boolean;
   totalStock: number;
+  variantInventory?: Record<string, Record<string, number>>;
   rating: number;
   reviewCount: number;
   tags: string[];
@@ -3141,3 +3142,18 @@ export const PRODUCTS: Product[] = [
     ]
   }
 ];
+
+export const CATEGORIES = FASHION_CATEGORIES;
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return PRODUCTS.find((p) => p.slug === slug);
+}
+
+export function getRelatedProducts(product: Product): Product[] {
+  if (product.relatedSlugs && product.relatedSlugs.length > 0) {
+    const related = PRODUCTS.filter((p) => product.relatedSlugs.includes(p.slug));
+    if (related.length > 0) return related;
+  }
+  return PRODUCTS.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4);
+}
+
