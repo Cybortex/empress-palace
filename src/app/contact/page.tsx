@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, Phone, Mail, MapPin, Clock, CheckCircle2, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle2, Send } from "lucide-react";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -28,9 +28,7 @@ export default function ContactPage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8A9BD]/20 border border-[#C6A15B]/40 text-[#A83263] text-xs uppercase tracking-[0.3em] font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
             <span>Private Concierge</span>
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
           </div>
 
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#241C20] font-normal leading-[1.08]">

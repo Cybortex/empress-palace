@@ -3,7 +3,7 @@
 import React, { useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { X, ChevronLeft, ChevronRight, Sparkles, ZoomIn, ZoomOut, ArrowRight, Tag } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, ArrowRight, Tag } from "lucide-react";
 import { GalleryItem } from "@/data/gallery";
 
 interface ImageLightboxProps {
@@ -55,7 +55,6 @@ export default function ImageLightbox({
       {/* Top action bar */}
       <div className="absolute top-4 inset-x-4 sm:inset-x-8 flex items-center justify-between text-[#FFF8F0] z-20">
         <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C6A15B]">
-          <Sparkles className="w-3.5 h-3.5" />
           <span>
             {currentIndex + 1} / {items.length} — {currentItem.category}
           </span>

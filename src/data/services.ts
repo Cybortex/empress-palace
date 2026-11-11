@@ -59,7 +59,7 @@ export const SERVICES: Service[] = [
       "Warm whipped nilotica shea butter cocoon wrap",
       "Chilled champagne and organic fruit pairing",
     ],
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/The_african_nature.jpg",
+    image: "/skincare-ritual.jpg",
     recommendedFor: "Total relaxation, muscle release, skin softening",
   },
   {

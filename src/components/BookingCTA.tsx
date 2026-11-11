@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useCart } from "@/context/CartContext";
-import { Sparkles, Phone, Calendar } from "lucide-react";
+import { Phone, Calendar } from "lucide-react";
 
 export default function BookingCTA() {
   const { openBooking } = useCart();
@@ -15,9 +15,7 @@ export default function BookingCTA() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF8F0]/10 border border-[#C6A15B]/40 text-[#C6A15B] text-xs uppercase tracking-[0.28em] font-semibold">
-          <Sparkles className="w-3.5 h-3.5" />
           <span>The Sovereign Invitation</span>
-          <Sparkles className="w-3.5 h-3.5" />
         </div>
 
         <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#FFF8F0] leading-[1.15] font-normal max-w-3xl mx-auto">

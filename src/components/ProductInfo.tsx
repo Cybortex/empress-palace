@@ -6,7 +6,6 @@ import { useCart } from "@/context/CartContext";
 import {
   Heart,
   ShoppingBag,
-  Sparkles,
   Check,
   ShieldCheck,
   Truck,
@@ -184,7 +183,6 @@ export default function ProductInfo({ product }: ProductInfoProps) {
             </span>
           ) : isLowStock ? (
             <span className="text-[#A83263] font-semibold flex items-center gap-1.5 animate-pulse">
-              <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
               Only {variantStock} pieces remaining in {selectedColor} ({selectedSize})
             </span>
           ) : (
@@ -260,7 +258,6 @@ export default function ProductInfo({ product }: ProductInfoProps) {
           onClick={() => openBooking(`Private Fitting: ${product.name}`)}
           className="w-full border border-[#C6A15B] text-[#241C20] hover:bg-[#C6A15B] hover:text-white py-3 rounded-[6px] text-xs uppercase tracking-[0.18em] font-medium transition-colors flex items-center justify-center gap-2"
         >
-          <Sparkles className="w-3.5 h-3.5 text-[#C6A15B] group-hover:text-white" />
           <span>Book Private Atelier Fitting For This Piece</span>
         </button>
       </div>

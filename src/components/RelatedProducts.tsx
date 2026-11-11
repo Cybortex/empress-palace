@@ -1,7 +1,6 @@
 import React from "react";
 import { Product, PRODUCTS } from "@/data/products";
 import ProductCard from "./ProductCard";
-import { Sparkles } from "lucide-react";
 
 interface RelatedProductsProps {
   currentProduct: Product;
@@ -21,9 +20,7 @@ export default function RelatedProducts({ currentProduct }: RelatedProductsProps
     <section className="mt-20 pt-16 border-t border-[#C6A15B]/25">
       <div className="text-center max-w-xl mx-auto space-y-3 mb-12">
         <span className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold flex items-center justify-center gap-2">
-          <Sparkles className="w-3.5 h-3.5" />
           <span>Curated Harmony</span>
-          <Sparkles className="w-3.5 h-3.5" />
         </span>
         <h3 className="font-serif text-3xl sm:text-4xl text-[#241C20] font-normal">
           You May Also <span className="font-editorial italic font-semibold text-[#A83263]">Admire</span>

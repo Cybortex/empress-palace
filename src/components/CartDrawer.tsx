@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
-import { X, Trash2, Plus, Minus, ShoppingBag, Sparkles, ArrowRight, ShieldCheck, Check } from "lucide-react";
+import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, ShieldCheck, Check } from "lucide-react";
 
 export default function CartDrawer() {
   const { cart, isCartOpen, closeCart, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
@@ -87,7 +87,7 @@ export default function CartDrawer() {
               <span className="text-[#241C20]">
                 {cartTotal >= freeShippingThreshold ? (
                   <span className="text-[#A83263] font-semibold flex items-center gap-1">
-                    <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" /> Complimentary White-Glove Shipping Unlocked
+                    Complimentary White-Glove Shipping Unlocked
                   </span>
                 ) : (
                   <span>

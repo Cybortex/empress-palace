@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function CategoriesSection() {
   const pillars = [
@@ -30,7 +30,7 @@ export default function CategoriesSection() {
       subtitle: "24K Gold & Botanical Elixirs",
       description:
         "Pure 24-karat gold facial infusions, Moroccan rose hydrotherapy, and organic Nilotica shea butter wraps in private marble suites.",
-      image: "https://commons.wikimedia.org/wiki/Special:FilePath/The_african_nature.jpg",
+      image: "/skincare-facial.jpg",
       badge: "Pillar III",
       link: "/beauty-spa",
       cta: "Experience Skincare",
@@ -43,9 +43,7 @@ export default function CategoriesSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold flex items-center justify-center gap-2">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>The Three Sovereign Pillars</span>
-            <Sparkles className="w-3.5 h-3.5" />
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#241C20] font-normal leading-tight">
             Fashion, Beauty & <span className="font-editorial italic font-semibold text-[#A83263]">Skincare</span>

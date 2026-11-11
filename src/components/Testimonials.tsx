@@ -1,5 +1,5 @@
 import React from "react";
-import { Star, Sparkles, Quote } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 export default function Testimonials() {
   const testimonials = [
@@ -38,9 +38,7 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold flex items-center justify-center gap-2">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>The Sovereign Circle</span>
-            <Sparkles className="w-3.5 h-3.5" />
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#241C20] font-normal leading-tight">
             Voices of <span className="font-editorial italic font-semibold text-[#A83263]">Admiration</span>

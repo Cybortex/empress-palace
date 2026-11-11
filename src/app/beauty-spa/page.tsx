@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { SERVICES } from "@/data/services";
 import { useCart } from "@/context/CartContext";
-import { Sparkles, Clock, Check, Calendar, Phone, ArrowRight, Flower2, Droplet, Crown } from "lucide-react";
+import { Clock, Check, Calendar, Phone, ArrowRight, Flower2, Droplet, Crown } from "lucide-react";
 
 export default function BeautySpaPage() {
   const { openBooking } = useCart();
@@ -17,9 +17,7 @@ export default function BeautySpaPage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-5">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8A9BD]/25 border border-[#C6A15B]/40 text-[#A83263] text-xs uppercase tracking-[0.3em] font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
             <span>Holistic Wellness & Crown Styling</span>
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
           </div>
 
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#241C20] font-normal leading-[1.08]">
@@ -160,7 +158,6 @@ export default function BeautySpaPage() {
                   onClick={() => openBooking(srv.title)}
                   className="w-full bg-[#A83263] hover:bg-[#8C2450] text-white py-3 rounded-[6px] text-xs uppercase tracking-[0.2em] font-semibold transition-colors flex items-center justify-center gap-2 shadow-sm"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-[#E8A9BD]" />
                   <span>Reserve This Ritual</span>
                 </button>
               </div>

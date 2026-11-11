@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Sparkles, MapPin, Phone, Mail, Clock, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -209,7 +209,6 @@ export default function Footer() {
 
           {/* Mandatory requirement: Built by Cybortex Technologies */}
           <div className="flex items-center gap-2 bg-[#FFF8F0]/5 border border-[#C6A15B]/30 px-3.5 py-1.5 rounded-full text-xs text-[#FFF8F0]/80">
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
             <span>Built by</span>
             <span className="font-semibold text-[#E8A9BD] tracking-wider uppercase">
               Cybortex Technologies

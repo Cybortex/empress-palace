@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ZoomIn, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
 interface ProductGalleryProps {
   productName: string;
@@ -144,7 +144,6 @@ export default function ProductGallery({ productName, images }: ProductGalleryPr
         {/* Caption */}
         <div className="flex items-center justify-between text-[11px] text-[#241C20]/60 mt-3 px-1">
           <span className="flex items-center gap-1">
-            <Sparkles className="w-3 h-3 text-[#C6A15B]" />
             <span>Authentic Atelier Photography</span>
           </span>
           <span>

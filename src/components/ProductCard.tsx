@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Product } from "@/data/products";
 import { useCart } from "@/context/CartContext";
-import { Heart, ShoppingBag, Check, Eye, X, Sparkles, ArrowRight, ShieldAlert } from "lucide-react";
+import { Heart, ShoppingBag, Check, Eye, X, ArrowRight, ShieldAlert } from "lucide-react";
 
 interface ProductCardProps {
   product: Product;

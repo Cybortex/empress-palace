@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { PRODUCTS, FASHION_CATEGORIES } from "@/data/products";
 import ProductCard from "./ProductCard";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function FeaturedCollections() {
   const [activeTab, setActiveTab] = useState<string>("All");
@@ -22,15 +22,13 @@ export default function FeaturedCollections() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-10 sm:mb-12">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold flex items-center justify-center gap-2">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Contemporary African Atelier</span>
-            <Sparkles className="w-3.5 h-3.5" />
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#241C20] font-normal leading-tight">
             Featured <span className="font-editorial italic font-semibold text-[#A83263]">Nigerian</span> Catalogue
           </h2>
           <p className="text-xs sm:text-sm text-[#241C20]/75 font-light max-w-lg mx-auto leading-relaxed">
-            Curated from our 40-piece visual reference archive: Ankara gowns, two-piece sets, and luxury occasion dresses.
+            Curated from our visual reference archive: Ankara gowns, two-piece sets, and luxury occasion dresses.
           </p>
         </div>
 
@@ -67,7 +65,7 @@ export default function FeaturedCollections() {
             href="/fashion"
             className="inline-flex items-center gap-2.5 border border-[#C6A15B] text-[#241C20] hover:bg-[#A83263] hover:text-white hover:border-[#A83263] text-xs uppercase tracking-[0.2em] px-8 py-3.5 rounded-[6px] font-medium transition-all duration-300 shadow-sm hover:shadow"
           >
-            <span>Explore All 40 Designs</span>
+            <span>Explore All Designs</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

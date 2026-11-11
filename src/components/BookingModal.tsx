@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useCart } from "@/context/CartContext";
-import { X, Sparkles, Calendar, Clock, User, Phone, Mail, CheckCircle2 } from "lucide-react";
+import { X, Calendar, Clock, User, Phone, Mail, CheckCircle2 } from "lucide-react";
 import { SERVICES } from "@/data/services";
 
 export default function BookingModal() {
@@ -61,7 +61,6 @@ export default function BookingModal() {
           <div className="bg-[#241C20] px-6 py-5 text-[#FFF8F0] flex items-center justify-between border-b border-[#C6A15B]">
             <div>
               <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C6A15B]">
-                <Sparkles className="w-3.5 h-3.5" />
                 <span>Empress Palace Concierge</span>
               </div>
               <h3 className="font-serif text-xl sm:text-2xl font-bold mt-1 text-[#FFF8F0]">
@@ -231,7 +230,6 @@ export default function BookingModal() {
                     </>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4 text-[#E8A9BD]" />
                       <span>Confirm Reservation</span>
                     </>
                   )}

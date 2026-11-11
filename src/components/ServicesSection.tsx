@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { SERVICES } from "@/data/services";
 import { useCart } from "@/context/CartContext";
-import { Sparkles, Clock, Check, ArrowRight } from "lucide-react";
+import { Clock, Check, ArrowRight } from "lucide-react";
 
 export default function ServicesSection() {
   const { openBooking } = useCart();
@@ -15,9 +15,7 @@ export default function ServicesSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold flex items-center justify-center gap-2">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Rituals of Radiance</span>
-            <Sparkles className="w-3.5 h-3.5" />
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#241C20] font-normal leading-tight">
             Featured <span className="font-editorial italic font-semibold text-[#A83263]">Sanctuary</span> Services
@@ -87,7 +85,6 @@ export default function ServicesSection() {
                   onClick={() => openBooking(service.title)}
                   className="w-full bg-[#A83263] hover:bg-[#8C2450] text-white py-3 rounded-[6px] text-xs uppercase tracking-[0.2em] font-semibold transition-colors flex items-center justify-center gap-2 shadow-sm"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-[#E8A9BD]" />
                   <span>Reserve Experience</span>
                 </button>
               </div>

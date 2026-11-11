@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { GALLERY_ITEMS } from "@/data/gallery";
 import ImageLightbox from "./ImageLightbox";
-import { Sparkles, ArrowRight, Eye } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
 
 export default function EditorialGalleryPreview() {
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
@@ -20,7 +20,6 @@ export default function EditorialGalleryPreview() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-[#C6A15B] font-semibold flex items-center gap-2 mb-2">
-              <Sparkles className="w-3.5 h-3.5" />
               <span>Editorial Lookbook</span>
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#241C20] font-normal leading-tight">

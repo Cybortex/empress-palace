@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, Phone, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (

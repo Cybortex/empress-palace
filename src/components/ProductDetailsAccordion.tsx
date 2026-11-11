@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Product } from "@/data/products";
-import { ChevronDown, Sparkles, Check, Scissors, Ruler, Shield, PackageCheck } from "lucide-react";
+import { ChevronDown, Check, Scissors, Ruler, Shield, PackageCheck } from "lucide-react";
 
 interface ProductDetailsAccordionProps {
   product: Product;
@@ -108,7 +108,7 @@ export default function ProductDetailsAccordion({ product }: ProductDetailsAccor
             <ul className="space-y-2.5 pt-2">
               {product.careInstructions.map((inst, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-xs text-[#241C20]/80">
-                  <Sparkles className="w-3.5 h-3.5 text-[#C6A15B] shrink-0 mt-0.5" />
+                  <Check className="w-3.5 h-3.5 text-[#C6A15B] shrink-0 mt-0.5" />
                   <span>{inst}</span>
                 </li>
               ))}

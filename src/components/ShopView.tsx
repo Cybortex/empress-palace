@@ -7,7 +7,6 @@ import ProductCard from "./ProductCard";
 import {
   Search,
   SlidersHorizontal,
-  Sparkles,
   X,
   ArrowUpDown,
   Filter,
@@ -113,9 +112,7 @@ export default function ShopView() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8A9BD]/20 border border-[#C6A15B]/40 text-[#A83263] text-xs uppercase tracking-[0.3em] font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
             <span>Contemporary Nigerian Boutique</span>
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
           </div>
 
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#241C20] font-normal leading-[1.1]">
@@ -180,7 +177,7 @@ export default function ShopView() {
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-[11px] text-[#241C20]/75">
           <Info className="w-3.5 h-3.5 text-[#C6A15B] shrink-0" />
           <span>
-            <strong>Visual Reference Catalogue:</strong> All 40 items represent demonstration mockups inspired by verified Nigerian fashion sources.
+            <strong>Visual Reference Catalogue:</strong> All catalogue items represent demonstration mockups inspired by verified Nigerian fashion sources.
           </span>
         </div>
       </section>
@@ -292,10 +289,9 @@ export default function ShopView() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
         {filteredProducts.length === 0 ? (
           <div className="text-center py-20 bg-white rounded-[16px] border border-[#C6A15B]/30 mt-4 space-y-4">
-            <Sparkles className="w-8 h-8 text-[#C6A15B] mx-auto" />
             <h3 className="font-serif text-2xl text-[#241C20] font-bold">No creations match your filter</h3>
             <p className="text-xs text-[#241C20]/70 max-w-sm mx-auto leading-relaxed">
-              Try adjusting your search criteria, widening the price tier, or exploring all 40 Nigerian fashion creations.
+              Try adjusting your search criteria, widening the price tier, or exploring all Nigerian fashion creations.
             </p>
             <button
               onClick={resetAllFilters}
