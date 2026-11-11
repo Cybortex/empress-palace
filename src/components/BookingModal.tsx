@@ -111,7 +111,7 @@ export default function BookingModal() {
                   >
                     {SERVICES.map((s) => (
                       <option key={s.id} value={s.title}>
-                        {s.title} — ${s.price} ({s.duration})
+                        {s.title} — ₦{s.price.toLocaleString()} ({s.duration})
                       </option>
                     ))}
                     <option value="Custom Bridal & Haute Couture Fitting">
@@ -180,7 +180,7 @@ export default function BookingModal() {
                     <input
                       type="tel"
                       required
-                      placeholder="+1 (800) 000-0000"
+                      placeholder="09071649725"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="w-full bg-white border border-[#C6A15B]/50 rounded-[6px] px-3.5 py-2 text-xs text-[#241C20] outline-none focus:border-[#A83263]"

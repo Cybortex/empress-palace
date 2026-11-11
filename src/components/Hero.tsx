@@ -14,12 +14,6 @@ export default function Hero() {
         <div className="flex flex-col-reverse lg:flex-row items-center min-h-[calc(100vh-110px)] py-12 lg:py-0 gap-10 lg:gap-8">
           {/* Left Column: Editorial Headline & CTAs (approx 40-45%) */}
           <div className="w-full lg:w-[45%] flex flex-col justify-center space-y-6 lg:space-y-8 z-10 text-left lg:pr-6">
-            {/* Editorial Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8A9BD]/25 border border-[#C6A15B]/40 text-[#A83263] text-xs uppercase tracking-[0.25em] font-medium w-fit">
-              <Sparkles className="w-3.5 h-3.5 text-[#C6A15B]" />
-              <span>Haute Couture & Beauty Sanctuary</span>
-            </div>
-
             {/* Headline with selective deep pink italic emphasis */}
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-normal leading-[1.08] text-[#241C20] tracking-tight">
               Where <span className="font-editorial italic font-semibold text-[#A83263] pr-1">Fashion</span> Meets{" "}
@@ -45,7 +39,7 @@ export default function Hero() {
 
               {/* Secondary Button: Call Us */}
               <a
-                href="tel:+18008433677"
+                href="tel:09071649725"
                 className="inline-flex items-center justify-center gap-2.5 border border-[#C6A15B] text-[#241C20] hover:bg-[#C6A15B] hover:text-[#FFFFFF] text-xs sm:text-sm uppercase tracking-[0.2em] px-7 py-4 rounded-[6px] font-medium transition-all duration-300 shadow-sm hover:shadow"
               >
                 <Phone className="w-4 h-4 text-[#C6A15B] group-hover:text-white" />
@@ -84,20 +78,7 @@ export default function Hero() {
               />
 
               {/* Refined gradient overlay for subtle luxury contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#241C20]/40 via-transparent to-transparent pointer-events-none" />
-
-              {/* Floating Editorial Pill */}
-              <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-[#FFF8F0]/90 backdrop-blur-md border border-[#C6A15B]/50 rounded-[12px] p-4 sm:p-5 shadow-lg max-w-sm">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#C6A15B] font-bold block mb-1">
-                  Atelier Showcase No. 01
-                </span>
-                <h3 className="font-serif text-base sm:text-lg text-[#241C20] font-bold leading-tight">
-                  The Imperial Magenta & Gold Aura
-                </h3>
-                <p className="text-xs text-[#241C20]/75 mt-1 font-light">
-                  Braided crown artistry paired with 24k gold filigree drops and hand-draped silk.
-                </p>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#241C20]/20 via-transparent to-transparent pointer-events-none" />
 
               {/* Corner Gold Frame Accents */}
               <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#C6A15B]/70 pointer-events-none" />

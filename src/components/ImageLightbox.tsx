@@ -2,7 +2,8 @@
 
 import React, { useEffect, useCallback } from "react";
 import Image from "next/image";
-import { X, ChevronLeft, ChevronRight, Sparkles, ZoomIn, ZoomOut } from "lucide-react";
+import Link from "next/link";
+import { X, ChevronLeft, ChevronRight, Sparkles, ZoomIn, ZoomOut, ArrowRight, Tag } from "lucide-react";
 import { GalleryItem } from "@/data/gallery";
 
 interface ImageLightboxProps {
@@ -125,8 +126,28 @@ export default function ImageLightbox({
         <p className="text-xs text-[#FFF8F0]/75 mt-2 font-light leading-relaxed">
           {currentItem.caption}
         </p>
-        <div className="flex items-center justify-center gap-2 mt-2 pt-2 border-t border-white/10 text-[10px] text-[#C6A15B] uppercase tracking-widest">
-          <span>{currentItem.credits}</span>
+
+        {/* Action Link for Purchasable Matching Mock Product vs Editorial */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-3 pt-2.5 border-t border-white/10">
+          <span className="text-[10px] text-[#C6A15B] uppercase tracking-widest">
+            {currentItem.credits}
+          </span>
+          {currentItem.productSlug && (
+            <Link
+              href={`/shop/${currentItem.productSlug}`}
+              onClick={onClose}
+              className="inline-flex items-center gap-1.5 bg-[#A83263] hover:bg-[#8C2450] text-white text-[11px] uppercase tracking-widest px-4 py-1.5 rounded-full font-semibold transition-colors shadow-sm ml-2"
+            >
+              <Tag className="w-3 h-3 text-[#E8A9BD]" />
+              <span>Shop Matching Style</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+          )}
+          {!currentItem.productSlug && (
+            <span className="text-[10px] uppercase tracking-widest bg-white/10 text-[#E8A9BD] px-3 py-1 rounded-full border border-white/15">
+              Editorial Visual Reference • Non-Purchasable
+            </span>
+          )}
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ export default function CartDrawer() {
 
   if (!isCartOpen) return null;
 
-  const freeShippingThreshold = 250;
+  const freeShippingThreshold = 250000;
   const progressToFreeShipping = Math.min(100, (cartTotal / freeShippingThreshold) * 100);
   const amountToFreeShipping = Math.max(0, freeShippingThreshold - cartTotal);
 
@@ -35,7 +35,7 @@ export default function CartDrawer() {
   };
 
   const discountAmount = cartTotal * promoDiscount;
-  const shippingCost = cartTotal >= freeShippingThreshold || cartTotal === 0 ? 0 : 25;
+  const shippingCost = cartTotal >= freeShippingThreshold || cartTotal === 0 ? 0 : 25000;
   const finalTotal = cartTotal - discountAmount + shippingCost;
 
   const handlePlaceOrder = () => {
@@ -91,7 +91,7 @@ export default function CartDrawer() {
                   </span>
                 ) : (
                   <span>
-                    Add <strong className="text-[#A83263]">${amountToFreeShipping.toFixed(0)}</strong> for Free White-Glove Courier
+                    Add <strong className="text-[#A83263]">₦{amountToFreeShipping.toLocaleString()}</strong> for Free White-Glove Courier
                   </span>
                 )}
               </span>
@@ -200,7 +200,7 @@ export default function CartDrawer() {
                       {/* Price & Delete */}
                       <div className="flex items-center gap-3">
                         <span className="font-serif text-sm font-semibold text-[#A83263]">
-                          ${(item.unitPrice * item.quantity).toLocaleString()}
+                          ₦{(item.unitPrice * item.quantity).toLocaleString()}
                         </span>
                         <button
                           onClick={() => removeFromCart(item.id)}
@@ -246,23 +246,23 @@ export default function CartDrawer() {
               <div className="space-y-1.5 pt-2 text-xs text-[#241C20]/80">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="font-medium">${cartTotal.toLocaleString()}</span>
+                  <span className="font-medium">₦{cartTotal.toLocaleString()}</span>
                 </div>
                 {promoDiscount > 0 && (
                   <div className="flex justify-between text-[#A83263]">
                     <span>VIP Privilege ({promoDiscount * 100}%)</span>
-                    <span>-${discountAmount.toFixed(2)}</span>
+                    <span>-₦{discountAmount.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
                   </div>
                 )}
                 <div className="flex justify-between">
                   <span>White-Glove Shipping</span>
                   <span className="font-medium">
-                    {shippingCost === 0 ? "Complimentary" : `$${shippingCost}`}
+                    {shippingCost === 0 ? "Complimentary" : `₦${shippingCost.toLocaleString()}`}
                   </span>
                 </div>
                 <div className="flex justify-between text-base font-serif font-bold text-[#241C20] pt-2 border-t border-[#C6A15B]/20">
                   <span>Total Due</span>
-                  <span className="text-[#A83263]">${finalTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  <span className="text-[#A83263]">₦{finalTotal.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
                 </div>
               </div>
 

@@ -73,7 +73,7 @@ export default function AboutPage() {
             <p className="text-sm sm:text-base text-[#241C20]/80 font-light leading-relaxed">
               For generations, the regal women of Africa have adorned themselves in hand-woven Aso-Oke,
               intricate coral beads, and fragrant botanical shea butters. We founded Empress Palace to elevate
-              this sacred heritage into a worldwide luxury house that commands reverence from Paris to Lagos.
+              this sacred heritage into a worldwide luxury house rooted in Abuja and commanding reverence across the globe.
             </p>
 
             <p className="text-sm sm:text-base text-[#241C20]/80 font-light leading-relaxed">

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-@theme {
+:root {
+  --background: #FFF8F0;
+  --foreground: #241C20;
   --color-rose-pink: #A83263;
   --color-rose-pink-dark: #8C2450;
   --color-rose-pink-light: #BF4578;
@@ -12,15 +14,26 @@
   --color-warm-cream-alt: #FBF0E4;
   --color-deep-charcoal: #241C20;
   --color-charcoal-muted: #4F4349;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-rose-pink: var(--color-rose-pink);
+  --color-rose-pink-dark: var(--color-rose-pink-dark);
+  --color-rose-pink-light: var(--color-rose-pink-light);
+  --color-blush-pink: var(--color-blush-pink);
+  --color-blush-pink-light: var(--color-blush-pink-light);
+  --color-champagne-gold: var(--color-champagne-gold);
+  --color-champagne-gold-light: var(--color-champagne-gold-light);
+  --color-warm-cream: var(--color-warm-cream);
+  --color-warm-cream-alt: var(--color-warm-cream-alt);
+  --color-deep-charcoal: var(--color-deep-charcoal);
+  --color-charcoal-muted: var(--color-charcoal-muted);
 
   --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
   --font-sans: var(--font-dm-sans), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-editorial: var(--font-cormorant), "Cormorant Garamond", Garamond, Georgia, serif;
-}
-
-:root {
-  --background: #FFF8F0;
-  --foreground: #241C20;
 }
 
 html {

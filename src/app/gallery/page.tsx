@@ -2,15 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { GALLERY_ITEMS, GalleryItem } from "@/data/gallery";
+import Link from "next/link";
+import { GALLERY_ITEMS, GALLERY_CATEGORIES, GalleryItem } from "@/data/gallery";
 import ImageLightbox from "@/components/ImageLightbox";
-import { Sparkles, Eye, Filter } from "lucide-react";
+import { Sparkles, Eye, Filter, ArrowRight, Tag } from "lucide-react";
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [selectedItemIndex, setSelectedItemIndex] = useState<number | null>(null);
 
-  const categories = ["All", "Fashion", "Beauty", "Spa"];
+  const categories = GALLERY_CATEGORIES;
 
   const filteredItems =
     activeCategory === "All"
@@ -133,15 +134,28 @@ export default function GalleryPage() {
                     {item.caption}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5 mt-3 pt-2 border-t border-white/20">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[9px] bg-white/10 px-2 py-0.5 rounded-full text-white/90"
+                  <div className="flex flex-wrap items-center justify-between gap-2 mt-3 pt-2 border-t border-white/20">
+                    <div className="flex flex-wrap gap-1.5">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[9px] bg-white/10 px-2 py-0.5 rounded-full text-white/90"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {item.productSlug && (
+                      <Link
+                        href={`/shop/${item.productSlug}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 bg-[#A83263] hover:bg-[#8C2450] text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full font-semibold transition-colors shadow-sm"
                       >
-                        #{tag}
-                      </span>
-                    ))}
+                        <Tag className="w-3 h-3 text-[#E8A9BD]" />
+                        <span>Shop Style →</span>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

@@ -62,7 +62,7 @@ export default function ServicesSection() {
                   </div>
 
                   <span className="font-serif text-lg font-bold text-[#A83263] block mb-3">
-                    ${service.price}
+                    ₦{service.price.toLocaleString()}
                   </span>
 
                   <p className="text-xs text-[#241C20]/75 font-light leading-relaxed mb-4">

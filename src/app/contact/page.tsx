@@ -67,13 +67,13 @@ export default function ContactPage() {
               <div className="p-6 rounded-[14px] bg-white border border-[#C6A15B]/30 space-y-2">
                 <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#A83263] font-bold">
                   <MapPin className="w-4 h-4 text-[#C6A15B]" />
-                  <span>Lagos Atelier & Spa</span>
+                  <span>Empress Flagship Atelier & Spa</span>
                 </div>
                 <h4 className="font-serif text-lg font-bold text-[#241C20]">
-                  45 Victoria Island Boulevard
+                  Plot 14, Gana Street, Maitama
                 </h4>
                 <p className="text-xs text-[#241C20]/70 font-light">
-                  Lagos, Nigeria • Valet Parking & Helipad Transfer Available
+                  Abuja, FCT, Nigeria • Valet Parking & Private VIP Suite
                 </p>
               </div>
 
@@ -81,13 +81,13 @@ export default function ContactPage() {
               <div className="p-6 rounded-[14px] bg-white border border-[#C6A15B]/30 space-y-2">
                 <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#A83263] font-bold">
                   <MapPin className="w-4 h-4 text-[#C6A15B]" />
-                  <span>London Mayfair Suite</span>
+                  <span>Asokoro Private Sanctuary</span>
                 </div>
                 <h4 className="font-serif text-lg font-bold text-[#241C20]">
-                  18 South Audley Street
+                  Yakubu Gowon Crescent, Asokoro
                 </h4>
                 <p className="text-xs text-[#241C20]/70 font-light">
-                  Mayfair, London W1K 2NT • Private Salon Appointments
+                  Abuja, Nigeria • Private Salon & Fitting Appointments
                 </p>
               </div>
 
@@ -95,8 +95,8 @@ export default function ContactPage() {
               <div className="p-6 rounded-[14px] bg-white border border-[#C6A15B]/30 space-y-3 text-xs">
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-[#C6A15B] shrink-0" />
-                  <a href="tel:+18008433677" className="text-[#241C20] hover:text-[#A83263] font-medium">
-                    +1 (800) 843-3677 (Toll-Free Worldwide)
+                  <a href="tel:09071649725" className="text-[#241C20] hover:text-[#A83263] font-medium">
+                    09071649725 (VIP Concierge Desk)
                   </a>
                 </div>
                 <div className="flex items-center gap-3">

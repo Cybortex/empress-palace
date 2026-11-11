@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import { Sparkles, MapPin, Phone, Mail, Clock, Instagram, Facebook, ArrowUpRight } from "lucide-react";
+import { Sparkles, MapPin, Phone, Mail, Clock, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -149,12 +151,12 @@ export default function Footer() {
             <div className="space-y-3 text-xs text-[#FFF8F0]/75">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#C6A15B] shrink-0 mt-0.5" />
-                <span>45 Victoria Island Blvd, Lagos & Mayfair Boutique, London W1</span>
+                <span>Plot 14, Gana Street, Maitama, Abuja, Nigeria</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#C6A15B] shrink-0" />
-                <a href="tel:+18008433677" className="hover:text-[#E8A9BD] transition-colors">
-                  +1 (800) 843-3677 / VIP Desk
+                <a href="tel:09071649725" className="hover:text-[#E8A9BD] transition-colors">
+                  09071649725 / VIP Desk
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
@@ -178,7 +180,11 @@ export default function Footer() {
                 className="w-8 h-8 rounded-full border border-[#C6A15B]/40 flex items-center justify-center text-[#C6A15B] hover:bg-[#A83263] hover:text-white hover:border-[#A83263] transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-4 h-4" />
+                <svg className="w-4 h-4 fill-none stroke-current stroke-[1.75]" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
               </a>
               <a
                 href="https://facebook.com"
@@ -187,7 +193,9 @@ export default function Footer() {
                 className="w-8 h-8 rounded-full border border-[#C6A15B]/40 flex items-center justify-center text-[#C6A15B] hover:bg-[#A83263] hover:text-white hover:border-[#A83263] transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-4 h-4" />
+                <svg className="w-4 h-4 fill-none stroke-current stroke-[1.75]" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
               </a>
             </div>
           </div>

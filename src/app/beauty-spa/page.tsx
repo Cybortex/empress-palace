@@ -42,7 +42,7 @@ export default function BeautySpaPage() {
               <span>Reserve Sanctuary Ritual</span>
             </button>
             <a
-              href="tel:+18008433677"
+              href="tel:09071649725"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-[#C6A15B] text-[#241C20] hover:bg-[#C6A15B] hover:text-white text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 rounded-[6px] font-medium transition-colors"
             >
               <Phone className="w-4 h-4 text-[#C6A15B]" />
@@ -138,7 +138,7 @@ export default function BeautySpaPage() {
                     {srv.title}
                   </h3>
                   <span className="font-serif text-lg font-bold text-[#A83263] block my-2">
-                    ${srv.price}
+                    ₦{srv.price.toLocaleString()}
                   </span>
                   <p className="text-xs text-[#241C20]/75 font-light leading-relaxed mb-4">
                     {srv.description}

@@ -80,18 +80,18 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         {product.salePrice ? (
           <>
             <span className="font-serif text-3xl sm:text-4xl font-bold text-[#A83263]">
-              ${product.salePrice.toLocaleString()}
+              ₦{product.salePrice.toLocaleString()}
             </span>
             <span className="text-base text-[#241C20]/45 line-through">
-              ${product.regularPrice.toLocaleString()}
+              ₦{product.regularPrice.toLocaleString()}
             </span>
             <span className="bg-[#C6A15B] text-white text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full font-bold ml-2">
-              Save ${(product.regularPrice - product.salePrice).toLocaleString()}
+              Save ₦{(product.regularPrice - product.salePrice).toLocaleString()}
             </span>
           </>
         ) : (
           <span className="font-serif text-3xl sm:text-4xl font-bold text-[#241C20]">
-            ${product.regularPrice.toLocaleString()}
+            ₦{product.regularPrice.toLocaleString()}
           </span>
         )}
       </div>

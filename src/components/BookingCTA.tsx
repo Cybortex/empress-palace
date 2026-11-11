@@ -39,11 +39,11 @@ export default function BookingCTA() {
           </button>
 
           <a
-            href="tel:+18008433677"
+            href="tel:09071649725"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-[#C6A15B] text-[#FFF8F0] hover:bg-[#C6A15B] hover:text-[#241C20] text-xs sm:text-sm uppercase tracking-[0.2em] px-8 py-4 rounded-[6px] font-medium transition-all duration-300 shadow-sm"
           >
             <Phone className="w-4 h-4 text-[#C6A15B]" />
-            <span>Call Concierge: (800) 843-3677</span>
+            <span>Call Concierge: 09071649725</span>
           </a>
         </div>
 
