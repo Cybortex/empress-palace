@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
+import Logo from "./Logo";
 import {
   ShoppingBag,
   Phone,
@@ -67,15 +68,8 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Brand Logo */}
-          <Link
-            href="/"
-            className="flex flex-col items-center group text-center"
-          >
-            <span className="font-serif text-lg sm:text-2xl md:text-3xl tracking-[0.14em] sm:tracking-[0.18em] text-[#241C20] uppercase font-bold group-hover:text-[#A83263] transition-colors">
-              Empress Palace
-            </span>
-          </Link>
+          {/* Brand Logo with Royal Emblem */}
+          <Logo size="md" showTagline={!isScrolled} />
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-8">

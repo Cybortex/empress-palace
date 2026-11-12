@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Logo from "./Logo";
 import { MapPin, Phone, Mail, Clock, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
@@ -12,14 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-14 border-b border-[#C6A15B]/25">
           {/* Column 1: Brand Editorial Statement (2 cols on large) */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="inline-block group">
-              <span className="font-serif text-2xl sm:text-3xl tracking-[0.2em] text-[#FFF8F0] uppercase font-bold group-hover:text-[#E8A9BD] transition-colors">
-                Empress Palace
-              </span>
-              <span className="block text-[10px] uppercase tracking-[0.35em] text-[#C6A15B] font-medium mt-1">
-                Hybrid Luxury • Haute Couture • Wellness Sanctuary
-              </span>
-            </Link>
+            <Logo variant="light" size="lg" />
 
             <p className="text-sm font-light text-[#FFF8F0]/75 leading-relaxed max-w-md font-sans">
               Where fashion meets beauty. We cultivate a sanctuary of sovereignty,

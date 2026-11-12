@@ -1,0 +1,256 @@
+const fs = require('fs');
+const path = require('path');
+const sharp = require('sharp');
+
+// 1. Standalone square icon emblem (viewBox 0 0 512 512)
+const iconSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="epGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5AB" />
+      <stop offset="35%" stop-color="#D4AF37" />
+      <stop offset="70%" stop-color="#C6A15B" />
+      <stop offset="100%" stop-color="#99732B" />
+    </linearGradient>
+    <linearGradient id="epRose" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D95383" />
+      <stop offset="50%" stop-color="#A83263" />
+      <stop offset="100%" stop-color="#701C3F" />
+    </linearGradient>
+    <linearGradient id="epBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D2328" />
+      <stop offset="50%" stop-color="#241C20" />
+      <stop offset="100%" stop-color="#181215" />
+    </linearGradient>
+    <filter id="epGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Luxurious Rounded Medallion Base -->
+  <rect x="24" y="24" width="464" height="464" rx="100" fill="url(#epBg)" stroke="url(#epGold)" stroke-width="6" />
+
+  <!-- Inner Delicate Concentric Border -->
+  <rect x="42" y="42" width="428" height="428" rx="84" fill="none" stroke="url(#epGold)" stroke-width="1.8" stroke-dasharray="8 6" opacity="0.6" />
+  <rect x="52" y="52" width="408" height="408" rx="76" fill="none" stroke="#E8A9BD" stroke-width="1.2" opacity="0.4" />
+
+  <!-- Top Imperial Empress Coronet -->
+  <g transform="translate(256, 128) scale(0.95)" text-anchor="middle">
+    <!-- Center peak pearl -->
+    <circle cx="0" cy="-38" r="8" fill="url(#epGold)" filter="url(#epGlow)" />
+    <!-- Flanking pearls -->
+    <circle cx="-38" cy="-26" r="6" fill="url(#epGold)" />
+    <circle cx="38" cy="-26" r="6" fill="url(#epGold)" />
+    <circle cx="-70" cy="-12" r="5" fill="url(#epGold)" />
+    <circle cx="70" cy="-12" r="5" fill="url(#epGold)" />
+
+    <!-- Crown Diadem Geometry -->
+    <path d="M -75 0 
+             L -70 -10
+             L -52 14
+             L -38 -24
+             L -20 18
+             L 0 -36
+             L 20 18
+             L 38 -24
+             L 52 14
+             L 70 -10
+             L 75 0
+             Q 0 8 -75 0 Z" 
+          fill="url(#epGold)" />
+    
+    <!-- Crown Band with Rubies / Rose accents -->
+    <path d="M -78 2 Q 0 12 78 2 L 75 14 Q 0 24 -75 14 Z" fill="url(#epRose)" stroke="url(#epGold)" stroke-width="1.5" />
+    <circle cx="-45" cy="8" r="2.5" fill="url(#epGold)" />
+    <circle cx="-22" cy="11" r="2.5" fill="url(#epGold)" />
+    <circle cx="0" cy="12" r="3" fill="#FFF8F0" />
+    <circle cx="22" cy="11" r="2.5" fill="url(#epGold)" />
+    <circle cx="45" cy="8" r="2.5" fill="url(#epGold)" />
+  </g>
+
+  <!-- Central Intertwined Imperial Monogram: E and P -->
+  <g transform="translate(256, 280)">
+    <!-- Monogram glow backing -->
+    <path d="M -80 -95 L -80 95 M -80 -95 L 45 -95 M -80 -3 L 20 -3 M -80 95 L 45 95" 
+          stroke="url(#epGold)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.15" />
+
+    <!-- Monogram: Letter 'E' in Roman Luxury Serif -->
+    <!-- Left Main Serif Stem -->
+    <path d="M -85 -100 L -45 -100 L -45 -82 L -56 -82 L -56 82 L -45 82 L -45 100 L -85 100 L -85 82 L -74 82 L -74 -82 L -85 -82 Z" 
+          fill="url(#epGold)" />
+
+    <!-- Top Arm of 'E' with Serif -->
+    <path d="M -56 -100 L 40 -100 L 40 -64 L 24 -64 L 24 -82 L -56 -82 Z" 
+          fill="url(#epGold)" />
+
+    <!-- Middle Arm of 'E' -->
+    <path d="M -56 -12 L 20 -12 L 28 2 L -56 2 Z" 
+          fill="url(#epGold)" />
+
+    <!-- Bottom Arm of 'E' with Upward Flourish -->
+    <path d="M -56 82 L 44 82 L 44 64 L 26 64 L 26 100 L -56 100 Z" 
+          fill="url(#epGold)" />
+
+    <!-- Monogram: Letter 'P' Interlaced in Rich Rose and Gold -->
+    <!-- 'P' Stem (harmoniously shares and extends through center-right) -->
+    <path d="M -12 -98 L 32 -98 L 32 -82 L 18 -82 L 18 92 L 28 92 L 28 100 L -22 100 L -22 92 L -12 92 L -12 -82 L -22 -82 L -22 -98 Z" 
+          fill="url(#epRose)" stroke="url(#epGold)" stroke-width="1.5" />
+
+    <!-- 'P' Elegant Classical Loop -->
+    <path d="M 18 -98 
+             C 75 -98, 92 -80, 92 -45 
+             C 92 -8, 72 10, 18 10 
+             L 18 -10 
+             C 52 -10, 68 -22, 68 -45 
+             C 68 -68, 52 -78, 18 -78 Z" 
+          fill="url(#epRose)" stroke="url(#epGold)" stroke-width="2" />
+  </g>
+
+  <!-- Laurel & Botanical Royalty Wreath Base -->
+  <g transform="translate(256, 420)">
+    <!-- Central Solitaire Diamond -->
+    <polygon points="0,-16 12,0 0,16 -12,0" fill="url(#epGold)" stroke="#FFF8F0" stroke-width="1" />
+    
+    <!-- Left Flourish Ribbon / Laurel -->
+    <path d="M -20 -2 Q -80 8 -130 -22 Q -95 -8 -30 -12 Z" fill="url(#epGold)" />
+    <path d="M -30 4 Q -100 24 -150 0 Q -110 8 -40 0 Z" fill="url(#epRose)" opacity="0.8" />
+    <circle cx="-135" cy="-24" r="3.5" fill="url(#epGold)" />
+    <circle cx="-155" cy="-2" r="3" fill="url(#epGold)" />
+
+    <!-- Right Flourish Ribbon / Laurel -->
+    <path d="M 20 -2 Q 80 8 130 -22 Q 95 -8 30 -12 Z" fill="url(#epGold)" />
+    <path d="M 30 4 Q 100 24 150 0 Q 110 8 40 0 Z" fill="url(#epRose)" opacity="0.8" />
+    <circle cx="135" cy="-24" r="3.5" fill="url(#epGold)" />
+    <circle cx="155" cy="-2" r="3" fill="url(#epGold)" />
+  </g>
+</svg>`;
+
+// 2. Full Horizontal Brand Logo (Emblem + Typography "EMPRESS PALACE")
+const fullLogoSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fullGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C788" />
+      <stop offset="40%" stop-color="#C6A15B" />
+      <stop offset="100%" stop-color="#9A7836" />
+    </linearGradient>
+    <linearGradient id="fullRose" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8A9BD" />
+      <stop offset="50%" stop-color="#A83263" />
+      <stop offset="100%" stop-color="#701C3F" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Emblem Icon (scaled into 140x140 frame at x=10, y=10) -->
+  <g transform="translate(10, 10) scale(0.273)">
+    <!-- Base Medallion -->
+    <rect x="24" y="24" width="464" height="464" rx="100" fill="#241C20" stroke="url(#fullGold)" stroke-width="8" />
+    <rect x="44" y="44" width="424" height="424" rx="80" fill="none" stroke="url(#fullGold)" stroke-width="2" stroke-dasharray="8 6" opacity="0.7" />
+
+    <!-- Coronet -->
+    <g transform="translate(256, 128) scale(0.95)">
+      <circle cx="0" cy="-38" r="8" fill="url(#fullGold)" />
+      <circle cx="-38" cy="-26" r="6" fill="url(#fullGold)" />
+      <circle cx="38" cy="-26" r="6" fill="url(#fullGold)" />
+      <circle cx="-70" cy="-12" r="5" fill="url(#fullGold)" />
+      <circle cx="70" cy="-12" r="5" fill="url(#fullGold)" />
+      <path d="M -75 0 L -70 -10 L -52 14 L -38 -24 L -20 18 L 0 -36 L 20 18 L 38 -24 L 52 14 L 70 -10 L 75 0 Q 0 8 -75 0 Z" fill="url(#fullGold)" />
+      <path d="M -78 2 Q 0 12 78 2 L 75 14 Q 0 24 -75 14 Z" fill="url(#fullRose)" stroke="url(#fullGold)" stroke-width="1.5" />
+    </g>
+
+    <!-- Monogram EP -->
+    <g transform="translate(256, 280)">
+      <path d="M -85 -100 L -45 -100 L -45 -82 L -56 -82 L -56 82 L -45 82 L -45 100 L -85 100 L -85 82 L -74 82 L -74 -82 L -85 -82 Z" fill="url(#fullGold)" />
+      <path d="M -56 -100 L 40 -100 L 40 -64 L 24 -64 L 24 -82 L -56 -82 Z" fill="url(#fullGold)" />
+      <path d="M -56 -12 L 20 -12 L 28 2 L -56 2 Z" fill="url(#fullGold)" />
+      <path d="M -56 82 L 44 82 L 44 64 L 26 64 L 26 100 L -56 100 Z" fill="url(#fullGold)" />
+      <path d="M -12 -98 L 32 -98 L 32 -82 L 18 -82 L 18 92 L 28 92 L 28 100 L -22 100 L -22 92 L -12 92 L -12 -82 L -22 -82 L -22 -98 Z" fill="url(#fullRose)" stroke="url(#fullGold)" stroke-width="1.5" />
+      <path d="M 18 -98 C 75 -98, 92 -80, 92 -45 C 92 -8, 72 10, 18 10 L 18 -10 C 52 -10, 68 -22, 68 -45 C 68 -68, 52 -78, 18 -78 Z" fill="url(#fullRose)" stroke="url(#fullGold)" stroke-width="2" />
+    </g>
+
+    <!-- Laurel Base -->
+    <g transform="translate(256, 420)">
+      <polygon points="0,-16 12,0 0,16 -12,0" fill="url(#fullGold)" />
+      <path d="M -20 -2 Q -80 8 -130 -22 Q -95 -8 -30 -12 Z" fill="url(#fullGold)" />
+      <path d="M 20 -2 Q 80 8 130 -22 Q 95 -8 30 -12 Z" fill="url(#fullGold)" />
+    </g>
+  </g>
+
+  <!-- Typography Right Side -->
+  <g transform="translate(175, 45)">
+    <!-- Primary Brand Title -->
+    <text x="0" y="42" font-family="'Playfair Display', Georgia, serif" font-size="44" font-weight="700" letter-spacing="6" fill="#241C20">
+      EMPRESS
+    </text>
+    <text x="282" y="42" font-family="'Playfair Display', Georgia, serif" font-size="44" font-weight="400" letter-spacing="6" fill="#A83263">
+      PALACE
+    </text>
+
+    <!-- Subtle Filigree Divider Line with Diamond -->
+    <line x1="0" y1="62" x2="220" y2="62" stroke="url(#fullGold)" stroke-width="1.2" />
+    <polygon points="230,62 235,58 240,62 235,66" fill="url(#fullGold)" />
+    <line x1="250" y1="62" x2="470" y2="62" stroke="url(#fullGold)" stroke-width="1.2" />
+
+    <!-- Subtitle Tagline -->
+    <text x="0" y="85" font-family="'DM Sans', -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="7" fill="#C6A15B">
+      HAUTE COUTURE • BEAUTY &amp; SPA • ABUJA
+    </text>
+  </g>
+</svg>`;
+
+async function main() {
+  console.log('Generating Empress Palace brand assets...');
+
+  // 1. Write SVGs
+  fs.writeFileSync(path.join(__dirname, '../public/logo-icon.svg'), iconSvg.trim());
+  fs.writeFileSync(path.join(__dirname, '../public/logo.svg'), fullLogoSvg.trim());
+  fs.writeFileSync(path.join(__dirname, '../src/app/icon.svg'), iconSvg.trim());
+
+  console.log('Saved SVG files:');
+  console.log('- public/logo-icon.svg');
+  console.log('- public/logo.svg');
+  console.log('- src/app/icon.svg');
+
+  // 2. Generate PNGs using Sharp
+  const svgBuffer = Buffer.from(iconSvg);
+
+  const png512 = await sharp(svgBuffer).resize(512, 512).png().toBuffer();
+  fs.writeFileSync(path.join(__dirname, '../public/logo-512.png'), png512);
+
+  const png192 = await sharp(svgBuffer).resize(192, 192).png().toBuffer();
+  fs.writeFileSync(path.join(__dirname, '../public/logo-192.png'), png192);
+
+  const appleTouch = await sharp(svgBuffer).resize(180, 180).png().toBuffer();
+  fs.writeFileSync(path.join(__dirname, '../src/app/apple-icon.png'), appleTouch);
+  fs.writeFileSync(path.join(__dirname, '../public/apple-touch-icon.png'), appleTouch);
+
+  // 3. Generate 32x32 and 48x48 PNG for favicon
+  const png32 = await sharp(svgBuffer).resize(32, 32).png().toBuffer();
+  fs.writeFileSync(path.join(__dirname, '../public/favicon-32x32.png'), png32);
+
+  // Write favicon.ico
+  // A standard Windows ICO header + 32x32 PNG entry (Modern ICO standard contains embedded PNG)
+  const icoHeader = Buffer.alloc(6);
+  icoHeader.writeUInt16LE(0, 0); // reserved
+  icoHeader.writeUInt16LE(1, 2); // ICO type
+  icoHeader.writeUInt16LE(1, 4); // 1 image
+
+  const icoEntry = Buffer.alloc(16);
+  icoEntry.writeUInt8(32, 0); // width 32
+  icoEntry.writeUInt8(32, 1); // height 32
+  icoEntry.writeUInt8(0, 2);  // color palette (0 = no palette)
+  icoEntry.writeUInt8(0, 3);  // reserved
+  icoEntry.writeUInt16LE(1, 4); // color planes
+  icoEntry.writeUInt16LE(32, 6); // bpp
+  icoEntry.writeUInt32LE(png32.length, 8); // size of image data
+  icoEntry.writeUInt32LE(22, 12); // offset of image data (6 header + 16 entry = 22)
+
+  const icoFile = Buffer.concat([icoHeader, icoEntry, png32]);
+  fs.writeFileSync(path.join(__dirname, '../src/app/favicon.ico'), icoFile);
+  fs.writeFileSync(path.join(__dirname, '../public/favicon.ico'), icoFile);
+
+  console.log('Generated favicon.ico and PNG formats successfully!');
+}
+
+main().catch(console.error);
