@@ -53,21 +53,6 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Mobile menu button */}
-          <div className="flex items-center lg:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-1.5 -ml-1.5 text-[#241C20] hover:text-[#A83263] transition-colors"
-              aria-label="Toggle navigation menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5 text-[#A83263]" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
-          </div>
-
           {/* Brand Logo with Royal Emblem */}
           <Logo size="md" showTagline={!isScrolled} />
 
@@ -96,8 +81,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Right Action Icons & CTAs */}
-          <div className="flex items-center space-x-3 sm:space-x-4">
+          {/* Right Action Icons & Hamburger Menu */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
             {/* Cart Drawer Trigger */}
             <button
               onClick={openCart}
@@ -112,14 +97,18 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Desktop "Call Us" CTA Button */}
-            <a
-              href="tel:09071649725"
-              className="inline-flex items-center gap-2 border border-[#C6A15B] text-[#241C20] hover:bg-[#C6A15B] hover:text-white px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs uppercase tracking-[0.18em] rounded-[6px] font-medium transition-all duration-300 shadow-sm"
+            {/* Mobile Hamburger Menu Button on Right Side */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 -mr-1.5 text-[#241C20] hover:text-[#A83263] transition-colors lg:hidden flex items-center justify-center"
+              aria-label="Toggle navigation menu"
             >
-              <Phone className="w-3.5 h-3.5 text-[#C6A15B] group-hover:text-white" />
-              <span>Call Us</span>
-            </a>
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-[#A83263]" />
+              ) : (
+                <Menu className="w-6 h-6 stroke-[1.75]" />
+              )}
+            </button>
           </div>
         </div>
       </div>
@@ -153,14 +142,14 @@ export default function Navbar() {
                 );
               })}
 
-              {/* Mobile Quick Action Buttons */}
-              <div className="pt-2 flex flex-col space-y-3">
+              {/* Mobile Quick Action Buttons: Call Us */}
+              <div className="pt-3 flex flex-col space-y-3">
                 <a
                   href="tel:09071649725"
-                  className="w-full bg-[#A83263] text-white py-2.5 text-xs uppercase tracking-[0.2em] rounded-[6px] font-medium flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full bg-[#A83263] hover:bg-[#8C2450] text-white py-3.5 text-xs uppercase tracking-[0.2em] rounded-[6px] font-semibold flex items-center justify-center gap-2.5 shadow-md transition-colors"
                 >
                   <Phone className="w-4 h-4 text-[#E8A9BD]" />
-                  <span>Call Concierge: 09071649725</span>
+                  <span>Call Us: 09071649725</span>
                 </a>
               </div>
 
